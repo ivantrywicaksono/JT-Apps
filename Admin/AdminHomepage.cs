@@ -21,5 +21,10 @@ namespace Admin
         {
 
         }
+
+        private void addNewsletterForm1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

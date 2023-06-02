@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             btnAddNews = new Button();
-            label2 = new Label();
-            label1 = new Label();
+            lbNewsLink = new Label();
+            lbNewsDescription = new Label();
             lbNewsTitle = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            tbNewsLink = new TextBox();
+            tbNewsDescription = new TextBox();
             tbNewsTitle = new TextBox();
             SuspendLayout();
             // 
@@ -47,25 +47,25 @@
             btnAddNews.Text = "Add";
             btnAddNews.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // lbNewsLink
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(86, 97);
-            label2.Name = "label2";
-            label2.Size = new Size(29, 15);
-            label2.TabIndex = 6;
-            label2.Text = "Link";
-            label2.TextAlign = ContentAlignment.MiddleRight;
+            lbNewsLink.AutoSize = true;
+            lbNewsLink.Location = new Point(86, 97);
+            lbNewsLink.Name = "lbNewsLink";
+            lbNewsLink.Size = new Size(29, 15);
+            lbNewsLink.TabIndex = 6;
+            lbNewsLink.Text = "Link";
+            lbNewsLink.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // label1
+            // lbNewsDescription
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(61, 68);
-            label1.Name = "label1";
-            label1.Size = new Size(54, 15);
-            label1.TabIndex = 7;
-            label1.Text = "Deskripsi";
-            label1.TextAlign = ContentAlignment.MiddleRight;
+            lbNewsDescription.AutoSize = true;
+            lbNewsDescription.Location = new Point(61, 68);
+            lbNewsDescription.Name = "lbNewsDescription";
+            lbNewsDescription.Size = new Size(54, 15);
+            lbNewsDescription.TabIndex = 7;
+            lbNewsDescription.Text = "Deskripsi";
+            lbNewsDescription.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lbNewsTitle
             // 
@@ -77,21 +77,21 @@
             lbNewsTitle.Text = "Judul";
             lbNewsTitle.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // textBox2
+            // tbNewsLink
             // 
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Location = new Point(124, 95);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(246, 23);
-            textBox2.TabIndex = 3;
+            tbNewsLink.BorderStyle = BorderStyle.FixedSingle;
+            tbNewsLink.Location = new Point(124, 95);
+            tbNewsLink.Name = "tbNewsLink";
+            tbNewsLink.Size = new Size(246, 23);
+            tbNewsLink.TabIndex = 3;
             // 
-            // textBox1
+            // tbNewsDescription
             // 
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Location = new Point(124, 66);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(246, 23);
-            textBox1.TabIndex = 4;
+            tbNewsDescription.BorderStyle = BorderStyle.FixedSingle;
+            tbNewsDescription.Location = new Point(124, 66);
+            tbNewsDescription.Name = "tbNewsDescription";
+            tbNewsDescription.Size = new Size(246, 23);
+            tbNewsDescription.TabIndex = 4;
             // 
             // tbNewsTitle
             // 
@@ -101,17 +101,18 @@
             tbNewsTitle.Name = "tbNewsTitle";
             tbNewsTitle.Size = new Size(246, 23);
             tbNewsTitle.TabIndex = 5;
+            tbNewsTitle.TextChanged += tbNewsTitle_TextChanged;
             // 
             // AddNewsletterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(btnAddNews);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(lbNewsLink);
+            Controls.Add(lbNewsDescription);
             Controls.Add(lbNewsTitle);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(tbNewsLink);
+            Controls.Add(tbNewsDescription);
             Controls.Add(tbNewsTitle);
             Name = "AddNewsletterForm";
             Size = new Size(783, 319);
@@ -122,11 +123,11 @@
         #endregion
 
         private Button btnAddNews;
-        private Label label2;
-        private Label label1;
+        private Label lbNewsLink;
+        private Label lbNewsDescription;
         private Label lbNewsTitle;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox tbNewsLink;
+        private TextBox tbNewsDescription;
         private TextBox tbNewsTitle;
     }
 }

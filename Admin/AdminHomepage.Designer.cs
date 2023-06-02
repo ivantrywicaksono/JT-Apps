@@ -34,7 +34,7 @@
             btnNewsletter = new Button();
             btnPaket = new Button();
             btnAddNews = new Button();
-            addNewsletterForm1 = new AddNewsletterForm();
+            addNewsletterForm = new AddNewsletterForm();
             flpanelNewsletters = new FlowLayoutPanel();
             btnNewsLetter1 = new Button();
             btnNewsLetter2 = new Button();
@@ -123,16 +123,16 @@
             btnAddNews.UseVisualStyleBackColor = false;
             btnAddNews.Click += btnAddNews_Click;
             // 
-            // addNewsletterForm1
+            // addNewsletterForm
             // 
-            addNewsletterForm1.Anchor = AnchorStyles.Top;
-            addNewsletterForm1.AutoSize = true;
-            addNewsletterForm1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            addNewsletterForm1.Location = new Point(265, 65);
-            addNewsletterForm1.Name = "addNewsletterForm1";
-            addNewsletterForm1.Size = new Size(373, 160);
-            addNewsletterForm1.TabIndex = 2;
-            addNewsletterForm1.Visible = false;
+            addNewsletterForm.Anchor = AnchorStyles.Top;
+            addNewsletterForm.AutoSize = true;
+            addNewsletterForm.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            addNewsletterForm.Location = new Point(265, 65);
+            addNewsletterForm.Name = "addNewsletterForm";
+            addNewsletterForm.Size = new Size(373, 160);
+            addNewsletterForm.TabIndex = 2;
+            addNewsletterForm.Visible = false;
             // 
             // flpanelNewsletters
             // 
@@ -208,7 +208,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1179, 681);
             Controls.Add(dataGridView1);
-            Controls.Add(addNewsletterForm1);
+            Controls.Add(addNewsletterForm);
             Controls.Add(flpanelNewsletters);
             Controls.Add(flpanelDashboard);
             Name = "AdminHomepage";
@@ -230,7 +230,7 @@
         private Button btnAddNews;
         private Label appTitle;
         private Button btnNewsletter;
-        private AddNewsletterForm addNewsletterForm1;
+        private AddNewsletterForm addNewsletterForm;
         private Panel panelTitle;
         private Button btnPaket;
         private FlowLayoutPanel flpanelNewsletters;
