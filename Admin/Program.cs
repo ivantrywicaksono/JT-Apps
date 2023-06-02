@@ -1,3 +1,5 @@
+using Npgsql;
+
 namespace Admin
 {
     internal static class Program

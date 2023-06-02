@@ -128,7 +128,7 @@
             addNewsletterForm.Anchor = AnchorStyles.Top;
             addNewsletterForm.AutoSize = true;
             addNewsletterForm.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            addNewsletterForm.Location = new Point(265, 65);
+            addNewsletterForm.Location = new Point(361, 65);
             addNewsletterForm.Name = "addNewsletterForm";
             addNewsletterForm.Size = new Size(373, 160);
             addNewsletterForm.TabIndex = 2;
@@ -206,13 +206,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1179, 681);
+            ClientSize = new Size(1920, 1080);
             Controls.Add(dataGridView1);
             Controls.Add(addNewsletterForm);
             Controls.Add(flpanelNewsletters);
             Controls.Add(flpanelDashboard);
             Name = "AdminHomepage";
-            Text = "Form1";
+            Text = "Admin Homepage";
             Load += AdminHomepage_Load;
             flpanelDashboard.ResumeLayout(false);
             flpanelDashboard.PerformLayout();

@@ -15,8 +15,28 @@ namespace Admin.Models
 
             using (NpgsqlConnection conn = new(connectionString))
             {
-                string sql = "INSERT INTO newsletters()";
+
+                string sql = "INSERT INTO newsletters " +
+                    "(news_title, news_description, news_link) " +
+                    "VALUES (@news_title, @news_description, @news_link)";
+
+                NpgsqlCommand command = new();
+                command.Connection = conn;
+                command.CommandText = sql;
+
+                command.Parameters.AddWithValue("news_title", "VS Postgres");
+                command.Parameters.AddWithValue("news_description", "Lorem ipsum asdf dolor sit amet, consectetur adipiscing elit.");
+                command.Parameters.AddWithValue("news_link", "https://example.co/aksdQdSFadfD12ht");
+                
                 conn.Open();
+
+                command.Prepare();
+                int rowsAffected = command.ExecuteNonQuery();
+                command.Parameters.Clear();
+
+                isSuccess = rowsAffected > 0;
+
+                conn.Close();
             }
 
             return isSuccess;

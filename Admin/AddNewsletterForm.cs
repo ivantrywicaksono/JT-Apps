@@ -22,16 +22,17 @@ namespace Admin
 
         }
 
-        public Models.Newsletter GetNewsletter()
-        {
-            Models.Newsletter newNewsletter = new Models.Newsletter
-            (
-                null,
-                tbNewsTitle.Text,
-                tbNewsDescription.Text,
-                tbNewsLink.Text
-            );
+        //public Models.Newsletter GetNewsletter()
+        //{
+        //    Models.Newsletter newNewsletter = new Models.Newsletter
+        //    (
+        //        null,
+        //        tbNewsTitle.Text,
+        //        tbNewsDescription.Text,
+        //        tbNewsLink.Text
+        //    );
 
-        }
+        //    return newNewsletter;
+        //}
     }
 }
