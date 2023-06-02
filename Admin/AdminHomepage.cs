@@ -16,5 +16,10 @@ namespace Admin
         {
 
         }
+
+        private void btnAddNews_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

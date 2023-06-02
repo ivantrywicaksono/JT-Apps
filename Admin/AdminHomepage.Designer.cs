@@ -29,14 +29,21 @@
         private void InitializeComponent()
         {
             flpanelDashboard = new FlowLayoutPanel();
+            panelTitle = new Panel();
             appTitle = new Label();
             btnNewsletter = new Button();
-            button1 = new Button();
-            addNewsletterForm1 = new AddNewsletterForm();
-            panelTitle = new Panel();
             btnPaket = new Button();
+            btnAddNews = new Button();
+            addNewsletterForm1 = new AddNewsletterForm();
+            flpanelNewsletters = new FlowLayoutPanel();
+            btnNewsLetter1 = new Button();
+            btnNewsLetter2 = new Button();
+            btnNewsLetter3 = new Button();
+            dataGridView1 = new DataGridView();
             flpanelDashboard.SuspendLayout();
             panelTitle.SuspendLayout();
+            flpanelNewsletters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // flpanelDashboard
@@ -50,6 +57,14 @@
             flpanelDashboard.Name = "flpanelDashboard";
             flpanelDashboard.Size = new Size(200, 681);
             flpanelDashboard.TabIndex = 0;
+            // 
+            // panelTitle
+            // 
+            panelTitle.Controls.Add(appTitle);
+            panelTitle.Location = new Point(3, 3);
+            panelTitle.Name = "panelTitle";
+            panelTitle.Size = new Size(197, 100);
+            panelTitle.TabIndex = 3;
             // 
             // appTitle
             // 
@@ -78,34 +93,6 @@
             btnNewsletter.UseVisualStyleBackColor = true;
             btnNewsletter.Click += btnNewsletter_Click;
             // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.FlatStyle = FlatStyle.System;
-            button1.Location = new Point(832, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // addNewsletterForm1
-            // 
-            addNewsletterForm1.AutoSize = true;
-            addNewsletterForm1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            addNewsletterForm1.Location = new Point(328, 126);
-            addNewsletterForm1.Name = "addNewsletterForm1";
-            addNewsletterForm1.Size = new Size(373, 160);
-            addNewsletterForm1.TabIndex = 2;
-            // 
-            // panelTitle
-            // 
-            panelTitle.Controls.Add(appTitle);
-            panelTitle.Location = new Point(3, 3);
-            panelTitle.Name = "panelTitle";
-            panelTitle.Size = new Size(197, 100);
-            panelTitle.TabIndex = 3;
-            // 
             // btnPaket
             // 
             btnPaket.AutoSize = true;
@@ -121,13 +108,108 @@
             btnPaket.Text = "Paket";
             btnPaket.UseVisualStyleBackColor = true;
             // 
+            // btnAddNews
+            // 
+            btnAddNews.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnAddNews.BackColor = Color.Transparent;
+            btnAddNews.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnAddNews.FlatAppearance.MouseOverBackColor = Color.Silver;
+            btnAddNews.FlatStyle = FlatStyle.Flat;
+            btnAddNews.Location = new Point(3, 109);
+            btnAddNews.Name = "btnAddNews";
+            btnAddNews.Size = new Size(250, 100);
+            btnAddNews.TabIndex = 1;
+            btnAddNews.Text = "New +";
+            btnAddNews.UseVisualStyleBackColor = false;
+            btnAddNews.Click += btnAddNews_Click;
+            // 
+            // addNewsletterForm1
+            // 
+            addNewsletterForm1.Anchor = AnchorStyles.Top;
+            addNewsletterForm1.AutoSize = true;
+            addNewsletterForm1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            addNewsletterForm1.Location = new Point(265, 65);
+            addNewsletterForm1.Name = "addNewsletterForm1";
+            addNewsletterForm1.Size = new Size(373, 160);
+            addNewsletterForm1.TabIndex = 2;
+            addNewsletterForm1.Visible = false;
+            // 
+            // flpanelNewsletters
+            // 
+            flpanelNewsletters.Controls.Add(btnNewsLetter1);
+            flpanelNewsletters.Controls.Add(btnNewsLetter2);
+            flpanelNewsletters.Controls.Add(btnNewsLetter3);
+            flpanelNewsletters.Controls.Add(btnAddNews);
+            flpanelNewsletters.Location = new Point(265, 65);
+            flpanelNewsletters.Name = "flpanelNewsletters";
+            flpanelNewsletters.Size = new Size(774, 214);
+            flpanelNewsletters.TabIndex = 3;
+            // 
+            // btnNewsLetter1
+            // 
+            btnNewsLetter1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnNewsLetter1.BackColor = SystemColors.GrayText;
+            btnNewsLetter1.BackgroundImageLayout = ImageLayout.None;
+            btnNewsLetter1.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnNewsLetter1.FlatAppearance.MouseOverBackColor = Color.Silver;
+            btnNewsLetter1.FlatStyle = FlatStyle.Flat;
+            btnNewsLetter1.Location = new Point(3, 3);
+            btnNewsLetter1.Name = "btnNewsLetter1";
+            btnNewsLetter1.Size = new Size(250, 100);
+            btnNewsLetter1.TabIndex = 2;
+            btnNewsLetter1.Text = "Newsletter Thumbnail";
+            btnNewsLetter1.UseVisualStyleBackColor = false;
+            // 
+            // btnNewsLetter2
+            // 
+            btnNewsLetter2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnNewsLetter2.BackColor = SystemColors.GrayText;
+            btnNewsLetter2.BackgroundImageLayout = ImageLayout.None;
+            btnNewsLetter2.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnNewsLetter2.FlatAppearance.MouseOverBackColor = Color.Silver;
+            btnNewsLetter2.FlatStyle = FlatStyle.Flat;
+            btnNewsLetter2.Location = new Point(259, 3);
+            btnNewsLetter2.Name = "btnNewsLetter2";
+            btnNewsLetter2.Size = new Size(250, 100);
+            btnNewsLetter2.TabIndex = 3;
+            btnNewsLetter2.Text = "Newsletter Thumbnail";
+            btnNewsLetter2.UseVisualStyleBackColor = false;
+            // 
+            // btnNewsLetter3
+            // 
+            btnNewsLetter3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnNewsLetter3.BackColor = SystemColors.GrayText;
+            btnNewsLetter3.BackgroundImageLayout = ImageLayout.None;
+            btnNewsLetter3.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnNewsLetter3.FlatAppearance.MouseOverBackColor = Color.Silver;
+            btnNewsLetter3.FlatStyle = FlatStyle.Flat;
+            btnNewsLetter3.Location = new Point(515, 3);
+            btnNewsLetter3.Name = "btnNewsLetter3";
+            btnNewsLetter3.Size = new Size(250, 100);
+            btnNewsLetter3.TabIndex = 4;
+            btnNewsLetter3.Text = "Newsletter Thumbnail";
+            btnNewsLetter3.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(265, 297);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(774, 150);
+            dataGridView1.TabIndex = 4;
+            // 
             // AdminHomepage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(919, 681);
+            ClientSize = new Size(1179, 681);
+            Controls.Add(dataGridView1);
             Controls.Add(addNewsletterForm1);
-            Controls.Add(button1);
+            Controls.Add(flpanelNewsletters);
             Controls.Add(flpanelDashboard);
             Name = "AdminHomepage";
             Text = "Form1";
@@ -136,6 +218,8 @@
             flpanelDashboard.PerformLayout();
             panelTitle.ResumeLayout(false);
             panelTitle.PerformLayout();
+            flpanelNewsletters.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -143,12 +227,16 @@
         #endregion
 
         private FlowLayoutPanel flpanelDashboard;
-        private Button button1;
+        private Button btnAddNews;
         private Label appTitle;
         private Button btnNewsletter;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private AddNewsletterForm addNewsletterForm1;
         private Panel panelTitle;
         private Button btnPaket;
+        private FlowLayoutPanel flpanelNewsletters;
+        private Button btnNewsLetter1;
+        private Button btnNewsLetter2;
+        private Button btnNewsLetter3;
+        private DataGridView dataGridView1;
     }
 }

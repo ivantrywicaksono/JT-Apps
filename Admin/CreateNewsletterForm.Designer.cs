@@ -39,7 +39,7 @@
             // 
             // tbNewsTitle
             // 
-            tbNewsTitle.BackColor = SystemColors.MenuText;
+            tbNewsTitle.BackColor = SystemColors.Window;
             tbNewsTitle.BorderStyle = BorderStyle.FixedSingle;
             tbNewsTitle.Location = new Point(88, 24);
             tbNewsTitle.Name = "tbNewsTitle";
