@@ -91,7 +91,6 @@
             btnNewsletter.TabIndex = 2;
             btnNewsletter.Text = "Newsletter";
             btnNewsletter.UseVisualStyleBackColor = true;
-            btnNewsletter.Click += btnNewsletter_Click;
             // 
             // btnPaket
             // 
@@ -121,7 +120,6 @@
             btnAddNews.TabIndex = 1;
             btnAddNews.Text = "New +";
             btnAddNews.UseVisualStyleBackColor = false;
-            btnAddNews.Click += btnAddNews_Click;
             // 
             // addNewsletterForm
             // 
@@ -213,7 +211,6 @@
             Controls.Add(flpanelDashboard);
             Name = "AdminHomepage";
             Text = "Admin Homepage";
-            Load += AdminHomepage_Load;
             flpanelDashboard.ResumeLayout(false);
             flpanelDashboard.PerformLayout();
             panelTitle.ResumeLayout(false);

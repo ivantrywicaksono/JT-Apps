@@ -101,7 +101,6 @@
             tbNewsTitle.Name = "tbNewsTitle";
             tbNewsTitle.Size = new Size(246, 23);
             tbNewsTitle.TabIndex = 5;
-            tbNewsTitle.TextChanged += tbNewsTitle_TextChanged;
             // 
             // AddNewsletterForm
             // 

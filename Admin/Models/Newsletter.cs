@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace Admin.Models
 {
-    internal class Newsletter
+    public class Newsletter
     {
-        private string? _newsId;
         private string _newsTitle;
         private string _newsDescription;
         private string _newsLink;
+        private int _newsId;
 
-        public Newsletter(string newsId, string newsTitle, string newsDescription, string newsLink)
+        public Newsletter(string newsTitle, string newsDescription, string newsLink, int newsId = 0)
         {
-            _newsId = newsId;
             _newsTitle = newsTitle;
             _newsDescription = newsDescription;
             _newsLink = newsLink;
+            _newsId = newsId;
         }
     }
 }

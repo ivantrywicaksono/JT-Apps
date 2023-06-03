@@ -17,22 +17,16 @@ namespace Admin
             InitializeComponent();
         }
 
-        private void tbNewsTitle_TextChanged(object sender, EventArgs e)
+        public Models.Newsletter GetNewsletter()
         {
+            Models.Newsletter newNewsletter = new Models.Newsletter
+            (
+                tbNewsTitle.Text,
+                tbNewsDescription.Text,
+                tbNewsLink.Text
+            );
 
+            return newNewsletter;
         }
-
-        //public Models.Newsletter GetNewsletter()
-        //{
-        //    Models.Newsletter newNewsletter = new Models.Newsletter
-        //    (
-        //        null,
-        //        tbNewsTitle.Text,
-        //        tbNewsDescription.Text,
-        //        tbNewsLink.Text
-        //    );
-
-        //    return newNewsletter;
-        //}
     }
 }
