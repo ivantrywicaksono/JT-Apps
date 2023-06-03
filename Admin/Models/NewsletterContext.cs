@@ -9,6 +9,10 @@ namespace Admin.Models
 {
     internal partial class NewsletterContext
     {
+        private readonly List<Newsletter> _newsletters = new();
+
+        public List<Newsletter> Newsletters => _newsletters;
+
         public bool Insert(Newsletter newsletter)
         {
             bool isSuccess = false;
@@ -26,9 +30,14 @@ namespace Admin.Models
                     CommandText = sql
                 };
 
-                command.Parameters.AddWithValue("news_title", "VS Postgres");
-                command.Parameters.AddWithValue("news_description", "Lorem ipsum asdf dolor sit amet, consectetur adipiscing elit.");
-                command.Parameters.AddWithValue("news_link", "https://example.co/aksdQdSFadfD12ht");
+                command.Parameters.AddWithValue("news_title", newsletter.Title);
+
+                if (newsletter.Description != null)
+                    command.Parameters.AddWithValue("news_description", newsletter.Description);
+                else
+                    command.Parameters.AddWithValue("news_description", DBNull.Value);
+
+                command.Parameters.AddWithValue("news_link", newsletter.Link);
                 
                 conn.Open();
 
@@ -39,6 +48,11 @@ namespace Admin.Models
                 conn.Close();
 
                 isSuccess = rowsAffected > 0;
+
+                if (isSuccess)
+                {
+                    _newsletters.Add(newsletter);
+                }
             }
 
             return isSuccess;
