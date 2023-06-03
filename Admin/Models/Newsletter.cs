@@ -8,17 +8,18 @@ namespace Admin.Models
 {
     public class Newsletter
     {
-        private string _newsTitle;
-        private string _newsDescription;
-        private string _newsLink;
-        private int _newsId;
+        public string Title { get; set; }
+        public string? Description { get; set; }
+        public string Link { get; set; }
+        public int Id { get; set; }
 
-        public Newsletter(string newsTitle, string newsDescription, string newsLink, int newsId = 0)
+        public Newsletter(string title, string link)
         {
-            _newsTitle = newsTitle;
-            _newsDescription = newsDescription;
-            _newsLink = newsLink;
-            _newsId = newsId;
+            Title = title;
+            Link = link;
         }
+
+        public Newsletter(string title, string description, string link) : this(title, link)
+            => Description = description;
     }
 }

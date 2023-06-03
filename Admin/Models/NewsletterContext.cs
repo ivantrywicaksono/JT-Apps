@@ -20,9 +20,11 @@ namespace Admin.Models
                     "(news_title, news_description, news_link) " +
                     "VALUES (@news_title, @news_description, @news_link)";
 
-                NpgsqlCommand command = new();
-                command.Connection = conn;
-                command.CommandText = sql;
+                NpgsqlCommand command = new()
+                {
+                    Connection = conn,
+                    CommandText = sql
+                };
 
                 command.Parameters.AddWithValue("news_title", "VS Postgres");
                 command.Parameters.AddWithValue("news_description", "Lorem ipsum asdf dolor sit amet, consectetur adipiscing elit.");
@@ -34,9 +36,9 @@ namespace Admin.Models
                 int rowsAffected = command.ExecuteNonQuery();
                 command.Parameters.Clear();
 
-                isSuccess = rowsAffected > 0;
-
                 conn.Close();
+
+                isSuccess = rowsAffected > 0;
             }
 
             return isSuccess;

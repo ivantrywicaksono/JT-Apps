@@ -19,7 +19,7 @@ namespace Admin
 
         public Models.Newsletter GetNewsletter()
         {
-            Models.Newsletter newNewsletter = new Models.Newsletter
+            Models.Newsletter newNewsletter = new
             (
                 tbNewsTitle.Text,
                 tbNewsDescription.Text,
