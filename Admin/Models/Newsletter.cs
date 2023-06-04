@@ -13,13 +13,15 @@ namespace Admin.Models
         public string Link { get; set; }
         public int Id { get; set; }
 
-        public Newsletter(string title, string link)
+        public Newsletter(string title, string description, string link)
         {
             Title = title;
+            Description = description;
             Link = link;
         }
 
-        public Newsletter(string title, string description, string link) : this(title, link)
-            => Description = description;
+        public Newsletter(string title, string description, string link, int id) : this(title, description, link)
+            => this.Id = id;
+
     }
 }

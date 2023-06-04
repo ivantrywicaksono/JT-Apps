@@ -35,32 +35,34 @@
             tbNewsLink = new TextBox();
             tbNewsDescription = new TextBox();
             tbNewsTitle = new TextBox();
+            btnCancelNews = new Button();
             SuspendLayout();
             // 
             // btnAddNews
             // 
             btnAddNews.Cursor = Cursors.Hand;
-            btnAddNews.Location = new Point(295, 134);
+            btnAddNews.Location = new Point(167, 103);
             btnAddNews.Name = "btnAddNews";
             btnAddNews.Size = new Size(75, 23);
-            btnAddNews.TabIndex = 9;
+            btnAddNews.TabIndex = 4;
             btnAddNews.Text = "Add";
             btnAddNews.UseVisualStyleBackColor = true;
+            btnAddNews.Click += BtnAddNews_Click;
             // 
             // lbNewsLink
             // 
             lbNewsLink.AutoSize = true;
-            lbNewsLink.Location = new Point(86, 97);
+            lbNewsLink.Location = new Point(39, 76);
             lbNewsLink.Name = "lbNewsLink";
             lbNewsLink.Size = new Size(29, 15);
-            lbNewsLink.TabIndex = 6;
+            lbNewsLink.TabIndex = 8;
             lbNewsLink.Text = "Link";
             lbNewsLink.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lbNewsDescription
             // 
             lbNewsDescription.AutoSize = true;
-            lbNewsDescription.Location = new Point(61, 68);
+            lbNewsDescription.Location = new Point(14, 47);
             lbNewsDescription.Name = "lbNewsDescription";
             lbNewsDescription.Size = new Size(54, 15);
             lbNewsDescription.TabIndex = 7;
@@ -70,17 +72,17 @@
             // lbNewsTitle
             // 
             lbNewsTitle.AutoSize = true;
-            lbNewsTitle.Location = new Point(80, 39);
+            lbNewsTitle.Location = new Point(33, 18);
             lbNewsTitle.Name = "lbNewsTitle";
             lbNewsTitle.Size = new Size(35, 15);
-            lbNewsTitle.TabIndex = 8;
+            lbNewsTitle.TabIndex = 6;
             lbNewsTitle.Text = "Judul";
             lbNewsTitle.TextAlign = ContentAlignment.MiddleRight;
             // 
             // tbNewsLink
             // 
             tbNewsLink.BorderStyle = BorderStyle.FixedSingle;
-            tbNewsLink.Location = new Point(124, 95);
+            tbNewsLink.Location = new Point(77, 74);
             tbNewsLink.Name = "tbNewsLink";
             tbNewsLink.Size = new Size(246, 23);
             tbNewsLink.TabIndex = 3;
@@ -88,24 +90,38 @@
             // tbNewsDescription
             // 
             tbNewsDescription.BorderStyle = BorderStyle.FixedSingle;
-            tbNewsDescription.Location = new Point(124, 66);
+            tbNewsDescription.Location = new Point(77, 45);
             tbNewsDescription.Name = "tbNewsDescription";
             tbNewsDescription.Size = new Size(246, 23);
-            tbNewsDescription.TabIndex = 4;
+            tbNewsDescription.TabIndex = 2;
             // 
             // tbNewsTitle
             // 
             tbNewsTitle.BackColor = SystemColors.Window;
             tbNewsTitle.BorderStyle = BorderStyle.FixedSingle;
-            tbNewsTitle.Location = new Point(124, 37);
+            tbNewsTitle.Location = new Point(77, 16);
             tbNewsTitle.Name = "tbNewsTitle";
             tbNewsTitle.Size = new Size(246, 23);
-            tbNewsTitle.TabIndex = 5;
+            tbNewsTitle.TabIndex = 1;
+            // 
+            // btnCancelNews
+            // 
+            btnCancelNews.Cursor = Cursors.Hand;
+            btnCancelNews.Location = new Point(248, 103);
+            btnCancelNews.Name = "btnCancelNews";
+            btnCancelNews.Size = new Size(75, 23);
+            btnCancelNews.TabIndex = 5;
+            btnCancelNews.Text = "Cancel";
+            btnCancelNews.UseVisualStyleBackColor = true;
+            btnCancelNews.Click += BtnCancelNews_Click;
             // 
             // AddNewsletterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            ClientSize = new Size(1011, 495);
+            Controls.Add(btnCancelNews);
             Controls.Add(btnAddNews);
             Controls.Add(lbNewsLink);
             Controls.Add(lbNewsDescription);
@@ -114,7 +130,6 @@
             Controls.Add(tbNewsDescription);
             Controls.Add(tbNewsTitle);
             Name = "AddNewsletterForm";
-            Size = new Size(783, 319);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -128,5 +143,6 @@
         private TextBox tbNewsLink;
         private TextBox tbNewsDescription;
         private TextBox tbNewsTitle;
+        private Button btnCancelNews;
     }
 }
