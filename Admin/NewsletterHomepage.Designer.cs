@@ -132,7 +132,6 @@
             Controls.Add(flpanelNewsletters);
             Name = "NewsletterHomepage";
             Size = new Size(771, 373);
-            Load += NewsletterHomepage_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             flpanelNewsletters.ResumeLayout(false);
             ResumeLayout(false);

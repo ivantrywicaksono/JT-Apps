@@ -22,10 +22,5 @@ namespace Admin
             using AddNewsletterForm addNewsletterForm = new();
             addNewsletterForm.ShowDialog();
         }
-
-        private void NewsletterHomepage_Load(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

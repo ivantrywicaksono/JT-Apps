@@ -11,10 +11,5 @@ namespace Admin
         {
             newsletterHomepage.Show();
         }
-
-        private void AdminHomepage_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

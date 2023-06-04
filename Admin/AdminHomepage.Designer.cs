@@ -120,7 +120,6 @@
             Controls.Add(flpanelDashboard);
             Name = "AdminHomepage";
             Text = "Admin Homepage";
-            Load += AdminHomepage_Load;
             flpanelDashboard.ResumeLayout(false);
             flpanelDashboard.PerformLayout();
             panelTitle.ResumeLayout(false);

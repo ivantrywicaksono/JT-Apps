@@ -75,7 +75,7 @@ namespace Admin.Models
 
                 while (reader.Read())
                 {
-                    string description = ConvertFromDBVal<string>(reader["news_description"]);
+                    string description = General.ConvertFromDBVal<string>(reader["news_description"]);
 
                     Newsletter newsletter = new
                     (
@@ -87,6 +87,8 @@ namespace Admin.Models
 
                     _newsletters.Add(newsletter);
                 }
+
+                isSuccess = reader.HasRows;
 
                 connection.Close();
             }
@@ -111,7 +113,7 @@ namespace Admin.Models
 
             reader.Read();
 
-            string description = ConvertFromDBVal<string>(reader["news_description"]);
+            string description = General.ConvertFromDBVal<string>(reader["news_description"]);
 
             Newsletter newsletter = new
             (
@@ -124,18 +126,6 @@ namespace Admin.Models
             connection.Close();
 
             return newsletter;
-        }
-
-        public static T ConvertFromDBVal<T>(object obj)
-        {
-            if (obj == null || obj == DBNull.Value)
-            {
-                return default(T); // returns the default value for the type
-            }
-            else
-            {
-                return (T)obj;
-            }
         }
     }
 }
