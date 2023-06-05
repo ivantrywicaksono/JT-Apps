@@ -47,12 +47,7 @@ namespace Admin.Models
                     isSuccess = rowsAffected > 0;
                 }
 
-
-                if (isSuccess)
-                {
-                    _newsletters.Add(newsletter);
-                    MessageBox.Show("Successss");
-                }
+                if (isSuccess) _newsletters.Add(newsletter);
             }
 
             return isSuccess;

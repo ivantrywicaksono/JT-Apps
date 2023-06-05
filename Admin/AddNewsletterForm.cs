@@ -24,9 +24,7 @@ namespace Admin
             string description = tbNewsDescription.Text;
 
             if (string.IsNullOrWhiteSpace(description))
-            {
                 description = null;
-            }
 
             Models.Newsletter newNewsletter = new(
                 tbNewsTitle.Text,

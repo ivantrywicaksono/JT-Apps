@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Admin.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Admin
 {
     public partial class NewsletterHomepage : UserControl
     {
+        Models.NewsletterContext newsletterContext = new();
         public NewsletterHomepage()
         {
             InitializeComponent();
@@ -21,6 +23,31 @@ namespace Admin
         {
             using AddNewsletterForm addNewsletterForm = new();
             addNewsletterForm.ShowDialog();
+
+            ShowItems();
+        }
+
+        private void NewsletterHomepage_Load(object sender, EventArgs e)
+        {
+            ShowItems();
+        }
+
+        private void ShowItems()
+        {
+            newsletterContext.ReadAll();
+            List<Newsletter> newsletters;
+            newsletters = newsletterContext.Newsletters;
+
+            flpanelNewsletters.Controls.Clear();
+
+            foreach (var newsletter in newsletters)
+            {
+                Button newsItem = new NewsletterItem().createItem();
+                newsItem.Text = newsletter.Title;
+                flpanelNewsletters.Controls.Add(newsItem);
+            }
+
+            flpanelNewsletters.Controls.Add(btnAddNews);
         }
     }
 }

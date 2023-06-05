@@ -30,10 +30,10 @@
         {
             dataGridView1 = new DataGridView();
             flpanelNewsletters = new FlowLayoutPanel();
+            btnAddNews = new Button();
             btnNewsLetter1 = new Button();
             btnNewsLetter2 = new Button();
             btnNewsLetter3 = new Button();
-            btnAddNews = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             flpanelNewsletters.SuspendLayout();
             SuspendLayout();
@@ -52,15 +52,29 @@
             // 
             // flpanelNewsletters
             // 
+            flpanelNewsletters.AutoScroll = true;
             flpanelNewsletters.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            flpanelNewsletters.Controls.Add(btnNewsLetter1);
-            flpanelNewsletters.Controls.Add(btnNewsLetter2);
-            flpanelNewsletters.Controls.Add(btnNewsLetter3);
             flpanelNewsletters.Controls.Add(btnAddNews);
+            flpanelNewsletters.FlowDirection = FlowDirection.TopDown;
             flpanelNewsletters.Location = new Point(0, 0);
             flpanelNewsletters.Name = "flpanelNewsletters";
             flpanelNewsletters.Size = new Size(768, 214);
             flpanelNewsletters.TabIndex = 5;
+            // 
+            // btnAddNews
+            // 
+            btnAddNews.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnAddNews.BackColor = Color.Transparent;
+            btnAddNews.FlatAppearance.MouseDownBackColor = Color.DimGray;
+            btnAddNews.FlatAppearance.MouseOverBackColor = Color.Silver;
+            btnAddNews.FlatStyle = FlatStyle.Flat;
+            btnAddNews.Location = new Point(3, 3);
+            btnAddNews.Name = "btnAddNews";
+            btnAddNews.Size = new Size(250, 100);
+            btnAddNews.TabIndex = 1;
+            btnAddNews.Text = "New +";
+            btnAddNews.UseVisualStyleBackColor = false;
+            btnAddNews.Click += BtnAddNews_Click;
             // 
             // btnNewsLetter1
             // 
@@ -70,7 +84,7 @@
             btnNewsLetter1.FlatAppearance.MouseDownBackColor = Color.DimGray;
             btnNewsLetter1.FlatAppearance.MouseOverBackColor = Color.Silver;
             btnNewsLetter1.FlatStyle = FlatStyle.Flat;
-            btnNewsLetter1.Location = new Point(3, 3);
+            btnNewsLetter1.Location = new Point(3, 109);
             btnNewsLetter1.Name = "btnNewsLetter1";
             btnNewsLetter1.Size = new Size(250, 100);
             btnNewsLetter1.TabIndex = 2;
@@ -100,38 +114,25 @@
             btnNewsLetter3.FlatAppearance.MouseDownBackColor = Color.DimGray;
             btnNewsLetter3.FlatAppearance.MouseOverBackColor = Color.Silver;
             btnNewsLetter3.FlatStyle = FlatStyle.Flat;
-            btnNewsLetter3.Location = new Point(515, 3);
+            btnNewsLetter3.Location = new Point(259, 109);
             btnNewsLetter3.Name = "btnNewsLetter3";
             btnNewsLetter3.Size = new Size(250, 100);
             btnNewsLetter3.TabIndex = 4;
             btnNewsLetter3.Text = "Newsletter Thumbnail";
             btnNewsLetter3.UseVisualStyleBackColor = false;
             // 
-            // btnAddNews
-            // 
-            btnAddNews.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnAddNews.BackColor = Color.Transparent;
-            btnAddNews.FlatAppearance.MouseDownBackColor = Color.DimGray;
-            btnAddNews.FlatAppearance.MouseOverBackColor = Color.Silver;
-            btnAddNews.FlatStyle = FlatStyle.Flat;
-            btnAddNews.Location = new Point(3, 109);
-            btnAddNews.Name = "btnAddNews";
-            btnAddNews.Size = new Size(250, 100);
-            btnAddNews.TabIndex = 1;
-            btnAddNews.Text = "New +";
-            btnAddNews.UseVisualStyleBackColor = false;
-            btnAddNews.Click += BtnAddNews_Click;
-            // 
             // NewsletterHomepage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             Controls.Add(dataGridView1);
             Controls.Add(flpanelNewsletters);
             Name = "NewsletterHomepage";
             Size = new Size(771, 373);
+            Load += NewsletterHomepage_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             flpanelNewsletters.ResumeLayout(false);
             ResumeLayout(false);
