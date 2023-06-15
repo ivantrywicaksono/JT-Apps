@@ -21,12 +21,13 @@ namespace Admin.Models
             using (NpgsqlConnection connection = new(connectionString))
             {
 
-                string sql = "INSERT INTO newsletters " +
-                    "(news_title, news_description, news_link) " +
-                    "VALUES (@news_title, @news_description, @news_link)";
+                string sql = "INSERT INTO newsletter " +
+                    "(tanggal, judul, deskripsi, link_berita) " +
+                    "VALUES (@news_date, @news_title, @news_description, @news_link)";
 
                 using (NpgsqlCommand command = new(sql, connection))
                 {
+                    command.Parameters.Add("news_date", NpgsqlTypes.NpgsqlDbType.Date).Value = newsletter.Date;
                     command.Parameters.AddWithValue("news_title", newsletter.Title);
 
                     if (!string.IsNullOrWhiteSpace(newsletter.Description))
@@ -59,7 +60,7 @@ namespace Admin.Models
 
             using (NpgsqlConnection connection = new(connectionString))
             {
-                string sql = "SELECT * FROM newsletters";
+                string sql = "SELECT * FROM newsletter";
 
                 using NpgsqlCommand command = new(sql, connection);
 
@@ -70,14 +71,15 @@ namespace Admin.Models
 
                 while (reader.Read())
                 {
-                    string description = General.ConvertFromDBVal<string>(reader["news_description"]);
+                    string description = General.ConvertFromDBVal<string>(reader["deskripsi"]);
 
                     Newsletter newsletter = new
                     (
-                        (string)reader["news_title"],
+                        DateOnly.FromDateTime((DateTime)reader["tanggal"]),
+                        (string)reader["judul"],
                         description,
-                        (string)reader["news_link"],
-                        (int)reader["news_id"]
+                        (string)reader["link_berita"],
+                        (int)reader["id_newsletter"]
                     );
 
                     _newsletters.Add(newsletter);
@@ -95,7 +97,7 @@ namespace Admin.Models
         {
             using NpgsqlConnection connection = new(connectionString);
 
-            string sql = "SELECT * FROM newsletters WHERE news_id = @news_id";
+            string sql = "SELECT * FROM newsletter WHERE news_id = @news_id";
 
             using NpgsqlCommand command = new(sql, connection);
             command.Parameters.Add("news_id", NpgsqlTypes.NpgsqlDbType.Integer).Value = id;
@@ -108,14 +110,15 @@ namespace Admin.Models
 
             reader.Read();
 
-            string description = General.ConvertFromDBVal<string>(reader["news_description"]);
+            string description = General.ConvertFromDBVal<string>(reader["deskripsi"]);
 
             Newsletter newsletter = new
             (
-                (string)reader["news_title"],
+                (DateOnly)reader["tanggal"],
+                (string)reader["judul"],
                 description,
-                (string)reader["news_link"],
-                (int)reader["news_id"]
+                (string)reader["link_berita"],
+                (int)reader["id_newsletter"]
             );
 
             connection.Close();

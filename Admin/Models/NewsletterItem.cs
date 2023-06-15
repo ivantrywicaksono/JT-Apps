@@ -24,7 +24,7 @@ namespace Admin.Models
             newsItem.Click += NewsItemClick;
         }
         
-        public Button createItem()
+        public Button CreateItem()
         {
             return newsItem;
         }

@@ -28,38 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            flpanelNewsletters = new FlowLayoutPanel();
+            flpanelnewsletter = new FlowLayoutPanel();
             btnAddNews = new Button();
             btnNewsLetter1 = new Button();
             btnNewsLetter2 = new Button();
             btnNewsLetter3 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            flpanelNewsletters.SuspendLayout();
+            flpanelnewsletter.SuspendLayout();
             SuspendLayout();
             // 
-            // dataGridView1
+            // flpanelnewsletter
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 220);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(768, 150);
-            dataGridView1.TabIndex = 6;
-            // 
-            // flpanelNewsletters
-            // 
-            flpanelNewsletters.AutoScroll = true;
-            flpanelNewsletters.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            flpanelNewsletters.Controls.Add(btnAddNews);
-            flpanelNewsletters.FlowDirection = FlowDirection.TopDown;
-            flpanelNewsletters.Location = new Point(0, 0);
-            flpanelNewsletters.Name = "flpanelNewsletters";
-            flpanelNewsletters.Size = new Size(768, 214);
-            flpanelNewsletters.TabIndex = 5;
+            flpanelnewsletter.AutoScroll = true;
+            flpanelnewsletter.Controls.Add(btnAddNews);
+            flpanelnewsletter.Location = new Point(3, 3);
+            flpanelnewsletter.Name = "flpanelnewsletter";
+            flpanelnewsletter.Size = new Size(768, 248);
+            flpanelnewsletter.TabIndex = 5;
             // 
             // btnAddNews
             // 
@@ -128,20 +112,17 @@
             AutoScroll = true;
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            Controls.Add(dataGridView1);
-            Controls.Add(flpanelNewsletters);
+            Controls.Add(flpanelnewsletter);
             Name = "NewsletterHomepage";
-            Size = new Size(771, 373);
+            Size = new Size(774, 254);
             Load += NewsletterHomepage_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            flpanelNewsletters.ResumeLayout(false);
+            flpanelnewsletter.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private DataGridView dataGridView1;
-        private FlowLayoutPanel flpanelNewsletters;
+        private FlowLayoutPanel flpanelnewsletter;
         private Button btnNewsLetter1;
         private Button btnNewsLetter2;
         private Button btnNewsLetter3;

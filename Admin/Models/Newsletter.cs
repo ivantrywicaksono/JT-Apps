@@ -8,19 +8,21 @@ namespace Admin.Models
 {
     public class Newsletter
     {
+        public int Id { get; set; }
+        public DateOnly Date { get; set; }
         public string Title { get; set; }
         public string? Description { get; set; }
         public string Link { get; set; }
-        public int Id { get; set; }
 
-        public Newsletter(string title, string description, string link)
+        public Newsletter(DateOnly date, string title, string description, string link)
         {
+            Date = date;
             Title = title;
             Description = description;
             Link = link;
         }
 
-        public Newsletter(string title, string description, string link, int id) : this(title, description, link)
+        public Newsletter(DateOnly date, string title, string description, string link, int id) : this(date, title, description, link)
             => this.Id = id;
 
     }

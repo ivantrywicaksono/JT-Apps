@@ -11,5 +11,10 @@ namespace Admin
         {
             newsletterHomepage.Show();
         }
+
+        private void btnPaket_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -36,12 +36,13 @@
             tbNewsDescription = new TextBox();
             tbNewsTitle = new TextBox();
             btnCancelNews = new Button();
+            datePickerNewsletter = new DateTimePicker();
             SuspendLayout();
             // 
             // btnAddNews
             // 
             btnAddNews.Cursor = Cursors.Hand;
-            btnAddNews.Location = new Point(167, 103);
+            btnAddNews.Location = new Point(167, 138);
             btnAddNews.Name = "btnAddNews";
             btnAddNews.Size = new Size(75, 23);
             btnAddNews.TabIndex = 4;
@@ -107,7 +108,7 @@
             // btnCancelNews
             // 
             btnCancelNews.Cursor = Cursors.Hand;
-            btnCancelNews.Location = new Point(248, 103);
+            btnCancelNews.Location = new Point(248, 138);
             btnCancelNews.Name = "btnCancelNews";
             btnCancelNews.Size = new Size(75, 23);
             btnCancelNews.TabIndex = 5;
@@ -115,12 +116,20 @@
             btnCancelNews.UseVisualStyleBackColor = true;
             btnCancelNews.Click += BtnCancelNews_Click;
             // 
+            // datePickerNewsletter
+            // 
+            datePickerNewsletter.Location = new Point(77, 103);
+            datePickerNewsletter.Name = "datePickerNewsletter";
+            datePickerNewsletter.Size = new Size(246, 23);
+            datePickerNewsletter.TabIndex = 9;
+            // 
             // AddNewsletterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1011, 495);
+            Controls.Add(datePickerNewsletter);
             Controls.Add(btnCancelNews);
             Controls.Add(btnAddNews);
             Controls.Add(lbNewsLink);
@@ -144,5 +153,6 @@
         private TextBox tbNewsDescription;
         private TextBox tbNewsTitle;
         private Button btnCancelNews;
+        private DateTimePicker datePickerNewsletter;
     }
 }

@@ -23,7 +23,8 @@ namespace Admin
         {
             using AddNewsletterForm addNewsletterForm = new();
             addNewsletterForm.ShowDialog();
-
+            //Newsletter news = newsletterContext.GetById(2);
+            //MessageBox.Show(news.Title + news.Description + news.Link, news.Id.ToString());
             ShowItems();
         }
 
@@ -38,16 +39,16 @@ namespace Admin
             List<Newsletter> newsletters;
             newsletters = newsletterContext.Newsletters;
 
-            flpanelNewsletters.Controls.Clear();
+            flpanelnewsletter.Controls.Clear();
 
-            foreach (var newsletter in newsletters)
+            foreach (var newsletter in newsletters.TakeLast(3))
             {
-                Button newsItem = new NewsletterItem().createItem();
+                Button newsItem = new NewsletterItem().CreateItem();
                 newsItem.Text = newsletter.Title;
-                flpanelNewsletters.Controls.Add(newsItem);
+                flpanelnewsletter.Controls.Add(newsItem);
             }
 
-            flpanelNewsletters.Controls.Add(btnAddNews);
+            flpanelnewsletter.Controls.Add(btnAddNews);
         }
     }
 }

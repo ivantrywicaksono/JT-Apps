@@ -6,3 +6,5 @@ CREATE TABLE newsletters
     news_link character varying(256) NOT NULL,
     PRIMARY KEY (news_id)
 );
+
+DELETE FROM newsletters;

@@ -27,6 +27,7 @@ namespace Admin
                 description = null;
 
             Models.Newsletter newNewsletter = new(
+                DateOnly.Parse(datePickerNewsletter.Value.ToShortDateString()),
                 tbNewsTitle.Text,
                 description,
                 tbNewsLink.Text
@@ -46,10 +47,9 @@ namespace Admin
         {
             this.Close();
         }
+
         private void BtnAddNews_Click(object sender, EventArgs e)
         {
-            Models.Newsletter newsletter = GetNewsletter();
-
             if (string.IsNullOrWhiteSpace(tbNewsTitle.Text))
             {
                 MessageBox.Show("Mohon isi judul");
@@ -60,13 +60,26 @@ namespace Admin
                 MessageBox.Show("Mohon isi link");
                 return;
             }
+            if (string.IsNullOrWhiteSpace(tbNewsDescription.Text))
+            {
+                MessageBox.Show("Mohon isi deskripsi");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(datePickerNewsletter.Value.ToShortDateString()))
+            {
+                MessageBox.Show("Mohon isi tanggal");
+                return;
+            }
+
+            Models.Newsletter newsletter = GetNewsletter();
 
             if (newsletterContext.Insert(newsletter))
             {
-                ResetForm();
+                //ResetForm();
                 newsletterContext.ReadAll();
                 MessageBox.Show(
-                    "Title: " + newsletterContext.Newsletters.Last().Title +
+                    "Date: " + newsletterContext.Newsletters.Last().Date +
+                    "\nTitle: " + newsletterContext.Newsletters.Last().Title +
                     "\nDescription: " + newsletterContext.Newsletters.Last().Description +
                     "\nLink: " + newsletterContext.Newsletters.Last().Link +
                     "\nID: " + newsletterContext.Newsletters.Last().Id

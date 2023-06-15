@@ -47,7 +47,7 @@
             flpanelDashboard.FlowDirection = FlowDirection.TopDown;
             flpanelDashboard.Location = new Point(0, 0);
             flpanelDashboard.Name = "flpanelDashboard";
-            flpanelDashboard.Size = new Size(200, 495);
+            flpanelDashboard.Size = new Size(200, 2023);
             flpanelDashboard.TabIndex = 0;
             // 
             // panelTitle
@@ -99,14 +99,17 @@
             btnPaket.TabIndex = 4;
             btnPaket.Text = "Paket";
             btnPaket.UseVisualStyleBackColor = true;
+            btnPaket.Click += btnPaket_Click;
             // 
             // newsletterHomepage
             // 
+            newsletterHomepage.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            newsletterHomepage.AutoScroll = true;
             newsletterHomepage.AutoSize = true;
             newsletterHomepage.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             newsletterHomepage.Location = new Point(206, 3);
             newsletterHomepage.Name = "newsletterHomepage";
-            newsletterHomepage.Size = new Size(771, 373);
+            newsletterHomepage.Size = new Size(771, 2020);
             newsletterHomepage.TabIndex = 3;
             newsletterHomepage.Visible = false;
             // 
@@ -114,6 +117,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             AutoSize = true;
             ClientSize = new Size(1011, 495);
             Controls.Add(newsletterHomepage);
